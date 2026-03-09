@@ -1,0 +1,101 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+HLSM/
+alfred_env/
+
+# IDE settings
+.idea/
+.vscode/
+
+# ALFRED Data - these should be downloaded, not stored in git
+alfred_src/alfred/data/*.7z
+alfred_src/alfred/data/json_2.1.0/
+alfred_src/alfred/data/json_feat_2.1.0/
+alfred_src/alfred/data/full_2.1.0/
+
+# Output files from scripts
+*.log
+
+# Server config (sensitive)
+.server_config
+
+# Large data files
+*.hdf5
+*.mp4
+*.avi
+mvp/data
+
+# Experiment results (videos and large files - keep for SCP)
+mvp/results/
+mvp/eval/results/
+eval_results_*/
+outputs_libero_plus_sequential/
+smolvla_disturbed_firsthalf/
+
+# Claude Code settings
+.claude/
+
+# Old experiments
+archived/
+
+# Reference papers (link instead of store)
+references/
+
+# Internal-only directories (removed from repo)
+docs/
+init/
+paper/
+openvla/
