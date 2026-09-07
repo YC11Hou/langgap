@@ -18,18 +18,11 @@
 
 <table align="center" width="100%">
   <tr>
-    <td align="center" width="47%" valign="top">
-      <a href="https://yuchenhou.me/assets/video/langgap_video.mp4">
-        <img src="https://yuchenhou.me/assets/img/langgap_video_poster.jpg" width="100%" alt="LangGap 3-minute overview video (click to play)">
-      </a>
-    </td>
-    <td align="center" width="53%" valign="top">
-      <img src="assets/langgap_grid_8x4.gif" width="100%" alt="Animated 8x4 grid of LangGap rollouts: same scene, different instructions">
-    </td>
+    <td colspan="2" align="center"><a href="https://yuchenhou.me/assets/video/langgap_video.mp4"><img src="https://yuchenhou.me/assets/img/langgap_video_poster.jpg" width="46.5%" alt="LangGap 3-minute overview video (click to play)"></a> <img src="assets/langgap_grid_8x4.gif" width="52.3%" alt="Animated 8x4 grid of LangGap rollouts: same scene, different instructions"></td>
   </tr>
   <tr>
-    <td align="center"><em>▶ <b>3-minute overview video</b> (click to play, MP4)</em></td>
-    <td align="center"><em><b>Same table, different words.</b> 32 rollouts in the same scenes; only the instruction changes.</em></td>
+    <td align="center" width="47%"><em>▶ <b>3-minute overview video</b> (click to play, MP4)</em></td>
+    <td align="center" width="53%"><em><b>Same table, different words.</b> 32 rollouts in the same scenes; only the instruction changes.</em></td>
   </tr>
 </table>
 
@@ -69,12 +62,11 @@ VLAs pass LIBERO through visual shortcuts: one task per layout, so memorizing th
 
 <table align="center" width="100%">
   <tr>
-    <td width="43%" valign="top"><img src="https://arxiv.org/html/2603.00592v1/x1.png" width="100%" alt="Four perturbation dimensions with example instructions and pi0.5 success rates"></td>
-    <td width="57%" valign="top"><img src="https://arxiv.org/html/2603.00592v1/x2.png" width="100%" alt="pi0.5 success rate: original LIBERO vs. each perturbation dimension"></td>
+    <td colspan="2" align="center"><img src="https://arxiv.org/html/2603.00592v1/x1.png" width="43.0%" alt="Four perturbation dimensions with example instructions and pi0.5 success rates"> <img src="https://arxiv.org/html/2603.00592v1/x2.png" width="55.9%" alt="pi0.5 success rate: original LIBERO vs. each perturbation dimension"></td>
   </tr>
   <tr>
-    <td align="center"><em><b>Four perturbation dimensions.</b> Starting from "put the bowl on the plate" (95.5%), only the instruction changes.</em></td>
-    <td align="center"><em><b>Diagnosis.</b> π0.5 drops from 93.8% to 21.4% (−72.4 pts); Change Target collapses to exactly 0%.</em></td>
+    <td align="center" width="43%"><em><b>Four perturbation dimensions.</b> Starting from "put the bowl on the plate" (95.5%), only the instruction changes.</em></td>
+    <td align="center" width="57%"><em><b>Diagnosis.</b> π0.5 drops from 93.8% to 21.4% (−72.4 pts); Change Target collapses to exactly 0%.</em></td>
   </tr>
 </table>
 
