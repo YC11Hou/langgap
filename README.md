@@ -1,6 +1,37 @@
-# LangGap: Diagnosing and Closing the Language Gap in Vision-Language-Action Models
+# LangGap: Diagnosing and Closing the Language Gap in Vision-Language-Action Models (IROS 2026)
 
 [Paper](https://arxiv.org/abs/2603.00592) | [Dataset & Models](https://huggingface.co/YC11Hou)
+
+<p align="center">
+  <a href="https://2026.ieee-iros.org/"><img src="https://img.shields.io/badge/IROS%202026-Accepted-EF7C00?style=for-the-badge" alt="IROS 2026 Accepted"></a>
+  <a href="https://arxiv.org/abs/2603.00592"><img src="https://img.shields.io/badge/arXiv-2603.00592-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv"></a>
+  <a href="https://huggingface.co/YC11Hou"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-Datasets%20%26%20Models-FFD21E?style=for-the-badge" alt="HuggingFace"></a>
+  <a href="https://yuchenhou.me/assets/video/langgap_video.mp4"><img src="https://img.shields.io/badge/Video-3%20min%20overview-003D7C?style=for-the-badge&logo=youtube&logoColor=white" alt="Video"></a>
+  <a href="https://yuchenhou.me/projects/1_vla_benchmark/"><img src="https://img.shields.io/badge/Project-Page-006DAA?style=for-the-badge" alt="Project Page"></a>
+</p>
+
+<p align="center">
+  <b>Yuchen Hou</b>, <b>Lin Zhao</b><br>
+  Department of Electrical and Computer Engineering, National University of Singapore<br>
+  <i>2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026), Pittsburgh, PA, USA</i>
+</p>
+
+<table align="center" width="100%">
+  <tr>
+    <td align="center" width="47%" valign="top">
+      <a href="https://yuchenhou.me/assets/video/langgap_video.mp4">
+        <img src="https://yuchenhou.me/assets/img/langgap_video_poster.jpg" width="100%" alt="LangGap 3-minute overview video (click to play)">
+      </a>
+    </td>
+    <td align="center" width="53%" valign="top">
+      <img src="assets/langgap_grid_8x4.gif" width="100%" alt="Animated 8x4 grid of LangGap rollouts: same scene, different instructions">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><em>▶ <b>3-minute overview video</b> (click to play, MP4)</em></td>
+    <td align="center"><em><b>Same table, different words.</b> 32 rollouts in the same scenes; only the instruction changes.</em></td>
+  </tr>
+</table>
 
 ## Overview
 
@@ -20,6 +51,68 @@ Vision is identical → language understanding is required.
 ```
 
 **Key Results**: Baseline VLAs score near 0% on our extended tasks (confirming the language gap). Fine-tuning with our multi-task same-scene data significantly improves language grounding.
+
+## LangGap at a Glance
+
+<table align="center">
+  <tr>
+    <td align="center" width="25%"><h2>93.8%</h2>π0.5 success on the 40 original LIBERO tasks</td>
+    <td align="center" width="25%"><h2>21.4%</h2>same scenes, semantically changed instructions</td>
+    <td align="center" width="25%"><h2>0%</h2>on all 13 Change-Target tasks (260 episodes)</td>
+    <td align="center" width="25%"><h2>99</h2>tasks where language is the only signal</td>
+  </tr>
+</table>
+
+### Key idea: same scene, different meaning
+
+VLAs pass LIBERO through visual shortcuts: one task per layout, so memorizing the scene suffices. LangGap keeps the tabletop identical and varies only the instruction along four orthogonal semantic dimensions (**Change Object**, **Change Target**, **Spatial Description**, **Drawer Action**). A model that ignores language scores at most 1/k per scene with k tasks.
+
+<table align="center" width="100%">
+  <tr>
+    <td width="43%" valign="top"><img src="https://arxiv.org/html/2603.00592v1/x1.png" width="100%" alt="Four perturbation dimensions with example instructions and pi0.5 success rates"></td>
+    <td width="57%" valign="top"><img src="https://arxiv.org/html/2603.00592v1/x2.png" width="100%" alt="pi0.5 success rate: original LIBERO vs. each perturbation dimension"></td>
+  </tr>
+  <tr>
+    <td align="center"><em><b>Four perturbation dimensions.</b> Starting from "put the bowl on the plate" (95.5%), only the instruction changes.</em></td>
+    <td align="center"><em><b>Diagnosis.</b> π0.5 drops from 93.8% to 21.4% (−72.4 pts); Change Target collapses to exactly 0%.</em></td>
+  </tr>
+</table>
+
+### Cross-model: everyone collapses
+
+Success rate on the 59 extended tasks. Every tested VLA shows the same gap; our 45-task fine-tune is the only model with nonzero Change-Target success.
+
+| Model | Original (40) | Extended (59) | Change Object | Change Target |
+|-------|:-------------:|:-------------:|:-------------:|:-------------:|
+| π0.5 | 93.8% | 21.4% | 29.3% | 0.0% |
+| π0 | 48.3% | 8.6% | 10.8% | 0.0% |
+| π0-FAST | 47.5% | 2.7% | 3.1% | 2.3% |
+| SmolVLA | 38.0% | 6.4% | 7.6% | 0.0% |
+| **π0.5 + LangGap (45-task)** | 89.5% | **22.8%** | 28.4% | **6.2%** |
+| **π0.5 + LangGap (56-task)** | 85.5% | 20.4% | 27.5% | 5.0% |
+
+### Can data close the gap? Partially.
+
+LoRA fine-tuning of π0.5 at five progressive scales, evaluated on the extended tasks:
+
+| Training config | Evaluated on | Baseline | Ours |
+|-----------------|:------------:|:--------:|:----:|
+| Single-task (1 ext) | 1 ext task | 3.75% | **90.0%** |
+| 6-task (1 orig + 5 ext) | 5 ext tasks | 0.0% | **28.0%** |
+| 45-task (40 orig + 5 ext) | 5 ext tasks | 0.0% | 4.0% |
+| 16-task (16 ext) | 16 ext tasks | 26.2% | 6.2% |
+| 56-task (40 orig + 16 ext) | 16 ext tasks | 26.2% | 27.5% |
+
+- **Dilution**: adding the 40 easy visual tasks drops 28% → 4% on the same evaluation; easy tasks dilute the language-grounding signal.
+- **Capacity wall**: 90% (1 task) → 28% (6) → 6.2% (16); diverse semantics is the fundamental challenge, and LangGap is the yardstick for measuring it.
+
+### Evaluation scenes: the four LIBERO suites
+
+<p align="center">
+  <img src="https://arxiv.org/html/2603.00592v1/figures/libero_suites_strip.png" width="100%" alt="LIBERO suites annotated with LangGap perturbation elements">
+  <br>
+  <em>Color key: <b>green</b> = original object/target · <b>blue</b> = alternative target · <b>orange</b> = alternative object · <b>purple</b> = interaction point. Percentages are π0.5 success rates when redirected to that element. libero_spatial: 28 extended tasks · libero_object: 22 · libero_goal: 9 · libero_10: original only.</em>
+</p>
 
 ## Datasets & Models
 
