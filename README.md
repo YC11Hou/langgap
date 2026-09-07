@@ -1,7 +1,5 @@
 # LangGap: Diagnosing and Closing the Language Gap in Vision-Language-Action Models (IROS 2026)
 
-[Paper](https://arxiv.org/abs/2603.00592) | [Dataset & Models](https://huggingface.co/YC11Hou)
-
 <p align="center">
   <a href="https://2026.ieee-iros.org/"><img src="https://img.shields.io/badge/IROS%202026-Accepted-EF7C00?style=for-the-badge" alt="IROS 2026 Accepted"></a>
   <a href="https://arxiv.org/abs/2603.00592"><img src="https://img.shields.io/badge/arXiv-2603.00592-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv"></a>
