@@ -47,12 +47,18 @@ Vision is identical → language understanding is required.
 
 ## LangGap at a Glance
 
-<table align="center">
+<table align="center" width="100%">
   <tr>
-    <td align="center" width="25%"><h2>93.8%</h2>π0.5 success on the 40 original LIBERO tasks</td>
-    <td align="center" width="25%"><h2>21.4%</h2>same scenes, semantically changed instructions</td>
-    <td align="center" width="25%"><h2>0%</h2>on all 13 Change-Target tasks (260 episodes)</td>
-    <td align="center" width="25%"><h2>99</h2>tasks where language is the only signal</td>
+    <td align="center" width="25%"><h2>93.8%</h2></td>
+    <td align="center" width="25%"><h2>21.4%</h2></td>
+    <td align="center" width="25%"><h2>0%</h2></td>
+    <td align="center" width="25%"><h2>99</h2></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">π0.5 success on the 40 original LIBERO tasks</td>
+    <td align="center" valign="top">same scenes, semantically changed instructions</td>
+    <td align="center" valign="top">on all 13 Change-Target tasks (260 episodes)</td>
+    <td align="center" valign="top">tasks where language is the only signal</td>
   </tr>
 </table>
 
