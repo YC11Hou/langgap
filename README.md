@@ -1,4 +1,4 @@
-# LangGap: Diagnosing and Closing the Language Gap in Vision-Language-Action Models (IROS 2026)
+<h1 align="center">LangGap: Diagnosing and Closing the Language Gap in Vision-Language-Action Models (IROS 2026)</h1>
 
 <p align="center">
   <a href="https://2026.ieee-iros.org/"><img src="https://img.shields.io/badge/IROS%202026-Accepted-EF7C00?style=for-the-badge" alt="IROS 2026 Accepted"></a>
