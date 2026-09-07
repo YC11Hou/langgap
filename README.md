@@ -21,7 +21,7 @@
     <td colspan="2" align="center"><a href="https://yuchenhou.me/assets/video/langgap_video.mp4"><img src="https://yuchenhou.me/assets/img/langgap_video_poster.jpg" width="46.5%" alt="LangGap 3-minute overview video (click to play)"></a> <img src="assets/langgap_grid_8x4.gif" width="52.3%" alt="Animated 8x4 grid of LangGap rollouts: same scene, different instructions"></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><em><b>Left:</b> ▶ 3-minute overview video (click to play, MP4). <b>Right:</b> same table, different words: 32 rollouts in the same scenes; only the instruction changes.</em></td>
+    <td colspan="2" align="center"><em><b>Left:</b> ▶ 3-minute overview video (click to play, MP4).<br><b>Right:</b> same table, different words: 32 rollouts in the same scenes; only the instruction changes.</em></td>
   </tr>
 </table>
 
@@ -70,7 +70,7 @@ VLAs pass LIBERO through visual shortcuts: one task per layout, so memorizing th
     <td colspan="2" align="center"><img src="https://arxiv.org/html/2603.00592v1/x1.png" width="43.0%" alt="Four perturbation dimensions with example instructions and pi0.5 success rates"> <img src="https://arxiv.org/html/2603.00592v1/x2.png" width="55.9%" alt="pi0.5 success rate: original LIBERO vs. each perturbation dimension"></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><em><b>Left:</b> the four perturbation dimensions; starting from "put the bowl on the plate" (95.5%), only the instruction changes. <b>Right:</b> π0.5 drops from 93.8% to 21.4% (−72.4 pts); Change Target collapses to exactly 0%.</em></td>
+    <td colspan="2" align="center"><em><b>Left:</b> the four perturbation dimensions; starting from "put the bowl on the plate" (95.5%), only the instruction changes.<br><b>Right:</b> π0.5 drops from 93.8% to 21.4% (−72.4 pts); Change Target collapses to exactly 0%.</em></td>
   </tr>
 </table>
 
